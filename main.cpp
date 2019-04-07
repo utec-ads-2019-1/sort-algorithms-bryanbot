@@ -27,22 +27,15 @@ int main(int argc, char* argv[]) {
     cout << "===========================================================" << endl << endl;
 
     executeTests();
-
     return EXIT_SUCCESS;
-}
-
-void compareIntegers(void *elements, int first, int second) {
-    int *array = (int*) elements;
-    if (array[first] > array[second]) {
-        swap(array[first], array[second]);
-    }
 }
 
 void executeTests() {
     for (int i = 0; i < NUMBER_OF_TESTS; ++i) {
         size_t size = mocker.generateRandomInt();
         int *array = mocker.generateRandomIntArray(size);
-        Tester::integerSorts(array, size, compareIntegers);
+        cout << *array << endl;
+        Tester::integerSorts(array, size);
         cout << "Passed test: " << i + 1 << endl;
     }
 }
