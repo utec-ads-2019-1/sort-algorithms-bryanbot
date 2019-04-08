@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
 
     executeTests();
     return EXIT_SUCCESS;
+    system("pause");
 }
 
 void executeTests() {
