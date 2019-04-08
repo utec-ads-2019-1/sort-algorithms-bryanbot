@@ -33,10 +33,10 @@ void Tester::integerSorts(int *array, size_t size) {
 
     Algorithm algorithm[] = { bubblesort, selectsort, insertsort, shellsort, quicksort, mergesort };
     size_t numberOfAlgorithms = sizeof(algorithm) / sizeof(algorithm[0]);
-    cout << numberOfAlgorithms << endl;
     for (int i = 0; i < numberOfAlgorithms; i++) {
         copy(array, array + size, temp);
         sort = getSort(algorithm[i], temp, size);
+        cout << sort << endl;
         sort->execute(getCompare(algorithm[i]));
         ASSERT(is_sorted(temp, temp + size), "The " + sort->name() + " is not ordering all the elements");
     }
