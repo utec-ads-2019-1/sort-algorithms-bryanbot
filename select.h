@@ -14,6 +14,7 @@ class SelectSort : public Sort {
                 int j = i + 1;
                 while (j < size){
                     min_index = (array[j] < array[min_index])? j:i;
+                    j++;
                 }
                 compare(elements, i, min_index);
             }
